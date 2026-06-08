@@ -1,0 +1,851 @@
+[
+  {
+    "category": "GENERAL",
+    "description": "비오는 날에 어울리는 따끈한 국물 요리 추천",
+    "id": "rainy_day",
+    "questions": [
+      {
+        "id": "rainy_q1",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 360,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q2_jeon",
+            "text": "소리부터 맛있다! 지글지글 고소한 전 🥞"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 361,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q2_soup",
+            "text": "온몸을 사르르 녹여줄 뜨끈뜨끈 국물요리 🍲"
+          }
+        ],
+        "questionText": "비 내리는 오늘, 당신의 본능이 이끄는 맛은?"
+      },
+      {
+        "id": "rainy_q2_jeon",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 362,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q3_jeon_topping",
+            "text": "고기나 해물이 듬뿍 올라간 든든한 전"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 363,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q3_jeon_base",
+            "text": "김치, 감자, 녹두 본연의 깔끔하고 바삭한 전"
+          }
+        ],
+        "questionText": "어떤 스타일의 전이 오늘 가장 당기시나요?"
+      },
+      {
+        "id": "rainy_q3_jeon_topping",
+        "options": [
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 364,
+            "mainIngredient": "BEEF",
+            "nextQuestionId": null,
+            "text": "육즙 가득하고 고소한 고기 맛 (육전)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 365,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_jeon_seafood",
+            "text": "신선한 해물과 야채의 조화"
+          }
+        ],
+        "questionText": "전 위에 올라갈 핵심 고명 스타일은?"
+      },
+      {
+        "id": "rainy_q3_jeon_base",
+        "options": [
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 366,
+            "mainIngredient": "KIMCHI",
+            "nextQuestionId": null,
+            "text": "새콤매콤 개운함 (김치전)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 367,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_jeon_plain",
+            "text": "담백하면서도 씹을수록 고소함"
+          }
+        ],
+        "questionText": "선호하는 맛의 분위기는?"
+      },
+      {
+        "id": "rainy_q4_jeon_seafood",
+        "options": [
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 368,
+            "mainIngredient": "SCALLION",
+            "nextQuestionId": null,
+            "text": "통통한 오징어/새우와 두툼한 쪽파의 조화 (해물파전)"
+          },
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 369,
+            "mainIngredient": "CHIVE",
+            "nextQuestionId": null,
+            "text": "얇고 바삭한 반죽에 향긋한 부추가 가득한 맛 (부추전)"
+          }
+        ],
+        "questionText": "해물/채소 고명의 디테일 선택은?"
+      },
+      {
+        "id": "rainy_q4_jeon_plain",
+        "options": [
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 370,
+            "mainIngredient": "POTATO",
+            "nextQuestionId": null,
+            "text": "감자를 갈아내 겉바속촉 쫀득한 감자전"
+          },
+          {
+            "detailStyle": "STANDARD",
+            "foodCategory": null,
+            "id": 371,
+            "mainIngredient": "MUNG_BEAN",
+            "nextQuestionId": null,
+            "text": "녹두를 곱게 갈아 두툼하게 부친 녹두빈대떡"
+          }
+        ],
+        "questionText": "담백한 맛의 주재료 선택은?"
+      },
+      {
+        "id": "rainy_q2_soup",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 372,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q3_soup_noodle",
+            "text": "한 그릇으로 호로록 끝내는 면 요리 (칼국수/수제비)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 373,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q3_soup_rice",
+            "text": "든든하게 속을 채워줄 밥 and 국물 (국밥/찌개/전골)"
+          }
+        ],
+        "questionText": "오늘 원하는 국물의 형태는?"
+      },
+      {
+        "id": "rainy_q3_soup_noodle",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 374,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_noodle_white",
+            "text": "자극 없이 맑고 개운한 국물"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 375,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_noodle_red",
+            "text": "칼칼하고 얼큰해 땀이 쫙 나는 매운 국물"
+          }
+        ],
+        "questionText": "면 요리 중 끌리는 육수의 텐션은?"
+      },
+      {
+        "id": "rainy_q4_noodle_white",
+        "options": [
+          {
+            "detailStyle": "KALGUKSU",
+            "foodCategory": null,
+            "id": 376,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "매끈하고 쫄깃하게 썰어낸 긴 면발 (바지락칼국수)"
+          },
+          {
+            "detailStyle": "SUJEBI",
+            "foodCategory": null,
+            "id": 377,
+            "mainIngredient": "POTATO",
+            "nextQuestionId": null,
+            "text": "반죽을 얇고 쫀득하게 뜯어 넣은 불규칙한 식감 (감자수제비)"
+          }
+        ],
+        "questionText": "맑은 육수 중 선호하는 면의 종류는?"
+      },
+      {
+        "id": "rainy_q4_noodle_red",
+        "options": [
+          {
+            "detailStyle": "KALGUKSU",
+            "foodCategory": null,
+            "id": 378,
+            "mainIngredient": "NONE",
+            "nextQuestionId": null,
+            "text": "고추장 베이스로 묵직하고 구수한 육수 (장칼국수)"
+          },
+          {
+            "detailStyle": "SUJEBI",
+            "foodCategory": null,
+            "id": 379,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "해산물 베이스로 얼큰하고 시원한 육수 (얼큰수제비)"
+          }
+        ],
+        "questionText": "매운 면 육수의 베이스 선택은?"
+      },
+      {
+        "id": "rainy_q3_soup_rice",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 380,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_rice_gukbap",
+            "text": "뚝배기에 담겨 밥을 말아 한 그릇 뚝딱 (국밥)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 381,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q4_rice_jjigae",
+            "text": "식탁 위에서 보글보글 끓여 덜어먹는 (찌개/전골)"
+          }
+        ],
+        "questionText": "원하는 식사의 차림 형태는?"
+      },
+      {
+        "id": "rainy_q4_rice_gukbap",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 382,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q5_gukbap_pork",
+            "text": "돼지 사골을 푹 고아 뽀얗고 묵직한 육수"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 383,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q5_gukbap_beef",
+            "text": "소갈비나 등뼈를 우려내 깊고 든든한 육수"
+          }
+        ],
+        "questionText": "국밥의 육수 베이스 선택은?"
+      },
+      {
+        "id": "rainy_q5_gukbap_pork",
+        "options": [
+          {
+            "detailStyle": "GUKBAP",
+            "foodCategory": null,
+            "id": 384,
+            "mainIngredient": "PORK",
+            "nextQuestionId": null,
+            "text": "정통 뽀얀 사골의 돼지 살코기 돼지국밥"
+          },
+          {
+            "detailStyle": "GUKBAP",
+            "foodCategory": null,
+            "id": 385,
+            "mainIngredient": "SUNDAE",
+            "nextQuestionId": null,
+            "text": "머리고기와 피순대가 조화로운 다대기 순대국밥"
+          }
+        ],
+        "questionText": "돼지 사골 국밥의 상세 건더기는?"
+      },
+      {
+        "id": "rainy_q5_gukbap_beef",
+        "options": [
+          {
+            "detailStyle": "GUKBAP",
+            "foodCategory": null,
+            "id": 386,
+            "mainIngredient": "BEEF",
+            "nextQuestionId": null,
+            "text": "커다란 갈비뼈를 고아 깊고 개운한 갈비탕"
+          },
+          {
+            "detailStyle": "GUKBAP",
+            "foodCategory": null,
+            "id": 387,
+            "mainIngredient": "PORK_BONE",
+            "nextQuestionId": null,
+            "text": "돼지등뼈와 시래기를 얼큰하게 끓인 뼈해장국"
+          }
+        ],
+        "questionText": "소/돼지 뼈 우린 육수 중 선택은?"
+      },
+      {
+        "id": "rainy_q4_rice_jjigae",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 388,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q5_jjigae_common",
+            "text": "얼큰/칼칼해 밥 한 공기 비우는 친근한 찌개"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 389,
+            "mainIngredient": null,
+            "nextQuestionId": "rainy_q5_jjigae_heavy",
+            "text": "건더기가 풍성해 안주로도 좋은 묵직한 전골/탕"
+          }
+        ],
+        "questionText": "찌개/전골 요리의 성격은?"
+      },
+      {
+        "id": "rainy_q5_jjigae_common",
+        "options": [
+          {
+            "detailStyle": "JJIGAE",
+            "foodCategory": null,
+            "id": 390,
+            "mainIngredient": "KIMCHI",
+            "nextQuestionId": null,
+            "text": "신김치와 돼지고기를 푹 끓여 개운한 김치찌개"
+          },
+          {
+            "detailStyle": "JJIGAE",
+            "foodCategory": null,
+            "id": 391,
+            "mainIngredient": "HAM_SAUSAGE",
+            "nextQuestionId": null,
+            "text": "햄, 소시지, 치즈가 들어가 리치하고 얼큰한 부대찌개"
+          }
+        ],
+        "questionText": "밥반찬용 찌개 상세 선택은?"
+      },
+      {
+        "id": "rainy_q5_jjigae_heavy",
+        "options": [
+          {
+            "detailStyle": "JJIGAE",
+            "foodCategory": null,
+            "id": 392,
+            "mainIngredient": "PORK",
+            "nextQuestionId": null,
+            "text": "곱창의 묵직한 기름맛과 곱이 녹아든 곱창전골"
+          },
+          {
+            "detailStyle": "JJIGAE",
+            "foodCategory": null,
+            "id": 393,
+            "mainIngredient": "AMUK",
+            "nextQuestionId": null,
+            "text": "꼬치어묵이 가득해 포장마차 갬성 돋는 꼬치어묵탕"
+          }
+        ],
+        "questionText": "전골/탕 요리 상세 선택은?"
+      }
+    ],
+    "title": "비오는데 뭐드실?"
+  },
+  {
+    "category": "GENERAL",
+    "description": "스트레스를 날려버릴 진하고 헤비한 음식 추천",
+    "id": "eat_and_die",
+    "questions": [],
+    "title": "오늘은 이거 먹고 죽자 그냥"
+  },
+  {
+    "category": "GENERAL",
+    "description": "연인과의 데이트 코스 및 맛집 추천",
+    "id": "honey_what_to_eat",
+    "questions": [
+      {
+        "id": "honey_q1",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 394,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "인스타 감성 뿜뿜! 예쁘고 사진 찍기 좋은 핫플 📸"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 395,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "우리끼리 오붓하게 대화할 수 있는 조용하고 프라이빗한 곳 🍷"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 396,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "분위기는 무슨! 무조건 맛이 보장된 노포 찐맛집 🤤"
+          }
+        ],
+        "questionText": "오랜만에 하는 데이트! 오늘따라 끌리는 식당 분위기는?"
+      },
+      {
+        "id": "honey_q2",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 397,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "달달한 디저트는 필수지! 빵이나 케이크가 맛있는 감성 카페 🍰"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 398,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "배불러서 더는 못 먹어! 깔끔하게 아메리카노만 테이크아웃 ☕"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 399,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "소화시킬 겸 근처 공원이나 거리를 좀 걷자 🚶‍♂️🚶‍♀️"
+          }
+        ],
+        "questionText": "식사를 마친 후, 우리의 다음 코스는?"
+      }
+    ],
+    "title": "자기야 오늘 뭐먹을래?"
+  },
+  {
+    "category": "EXPERT",
+    "description": "라멘 매니아들을 위한 깊고 매니악한 라멘 추천",
+    "id": "ramen_monster",
+    "questions": [
+      {
+        "id": "monster_q1",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 400,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q2_bibim",
+            "text": "찐득한 비빔 (국물 없음)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 401,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q2_soup",
+            "text": "국물 드링킹 (뜨끈한 국물)"
+          }
+        ],
+        "questionText": "오늘 위장에 채워 넣을 라멘의 형태는?"
+      },
+      {
+        "id": "monster_q2_bibim",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 402,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q3_tsukemen",
+            "text": "찍먹 (츠케멘)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 403,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q3_maze_abura",
+            "text": "비빔 (마제 / 아부라)"
+          }
+        ],
+        "questionText": "비빔 라멘의 스타일은?"
+      },
+      {
+        "id": "monster_q3_tsukemen",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 404,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "YES (바다 풍미)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 405,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "NO (고기/간장 베이스)"
+          }
+        ],
+        "questionText": "니보시(멸치)/교카이(어패류) 풍미를 좋아하시나요?"
+      },
+      {
+        "id": "monster_q3_maze_abura",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 406,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "민찌 중심 꾸덕 비빔 (마제소바)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 407,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "기름+타래 중심 묵직 비빔 (아부라)"
+          }
+        ],
+        "questionText": "고명 중심인가요, 아니면 기름과 타래 중심인가요?"
+      },
+      {
+        "id": "monster_q2_soup",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 408,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q3_clear",
+            "text": "A. 깔끔 (청탕)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 409,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q3_rich",
+            "text": "B. 든든 (토리파이탄 / 미소)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 410,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q3_hardcore",
+            "text": "C. 혈관 파괴 (하드코어)"
+          }
+        ],
+        "questionText": "육수의 텐션 / 농도는?"
+      },
+      {
+        "id": "monster_q3_clear",
+        "options": [
+          {
+            "detailStyle": "SHIO",
+            "foodCategory": null,
+            "id": 411,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "소금의 직관적인 쨍함 (시오)"
+          },
+          {
+            "detailStyle": "SHOYU",
+            "foodCategory": null,
+            "id": 412,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "깊은 풍미와 밸런스 (쇼유)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 413,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "도미/굴/오리 등 독특한 이색 재료"
+          }
+        ],
+        "questionText": "맑은 육수의 중심 타래/재료는?"
+      },
+      {
+        "id": "monster_q3_rich",
+        "options": [
+          {
+            "detailStyle": "TORI_PAITAN",
+            "foodCategory": null,
+            "id": 414,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "크리미하게 우려낸 닭 백탕 (파이탄)"
+          },
+          {
+            "detailStyle": "MISO",
+            "foodCategory": null,
+            "id": 415,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q4_miso",
+            "text": "구수하게 지지는 일본식 된장 (미소)"
+          }
+        ],
+        "questionText": "고기 백탕 vs 된장 베이스?"
+      },
+      {
+        "id": "monster_q4_miso",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 416,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "정통 미소의 깊은 구수함"
+          },
+          {
+            "detailStyle": "CURRY",
+            "foodCategory": null,
+            "id": 417,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "카레 풍미가 섞인 독특한 킥"
+          }
+        ],
+        "questionText": "미소 라멘의 디테일 취향은?"
+      },
+      {
+        "id": "monster_q3_hardcore",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 418,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q4_seafood",
+            "text": "YES (바다파)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 419,
+            "mainIngredient": null,
+            "nextQuestionId": "monster_q4_meat",
+            "text": "NO (고기파)"
+          }
+        ],
+        "questionText": "바다 풍미 (니보시/교카이) 선호?"
+      },
+      {
+        "id": "monster_q4_seafood",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 420,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "기름+짠맛의 밸런스 (타격감)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 421,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "시멘트빛 멸치 진액 (완전파괴)"
+          }
+        ],
+        "questionText": "기름+짠 타격감 vs 진짜 파괴?"
+      },
+      {
+        "id": "monster_q4_meat",
+        "options": [
+          {
+            "detailStyle": "IEKEI",
+            "foodCategory": null,
+            "id": 422,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "기름+짠맛의 묵직함 (타격감)"
+          },
+          {
+            "detailStyle": "JIRO",
+            "foodCategory": null,
+            "id": 423,
+            "mainIngredient": null,
+            "nextQuestionId": null,
+            "text": "산더미 숙주와 비계 덩어리 (지로)"
+          }
+        ],
+        "questionText": "이에케/돈코츠 vs 숙주폭탄 지로계?"
+      }
+    ],
+    "title": "라오타의 라멘 추천"
+  },
+  {
+    "category": "EXPERT",
+    "description": "정통 멕시칸부터 텍스멕스까지 완벽한 타코 매칭",
+    "id": "taco_lover",
+    "questions": [
+      {
+        "id": "taco_q1",
+        "options": [
+          {
+            "detailStyle": "AUTHENTIC",
+            "foodCategory": null,
+            "id": 424,
+            "mainIngredient": null,
+            "nextQuestionId": "taco_q2_authentic",
+            "text": "옥수수 또르띠아 (정통 멕시칸의 구수한 옥수수 향과 묵직한 질감)"
+          },
+          {
+            "detailStyle": "TEX_MEX",
+            "foodCategory": null,
+            "id": 425,
+            "mainIngredient": null,
+            "nextQuestionId": "taco_q2_texmex",
+            "text": "밀가루 또르띠아 (텍스멕스/국경식의 부드럽고 쫄깃한 식감)"
+          }
+        ],
+        "questionText": "타코의 기본 베이스인 또르띠아(Tortilla) 원료는 어떤 것이 좋은가요?"
+      },
+      {
+        "id": "taco_q2_authentic",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 426,
+            "mainIngredient": null,
+            "nextQuestionId": "taco_q3_authentic_pork",
+            "text": "라드(Lard)에 오랜 시간 저온 조리하거나 화로 직화한 돼지고기 (까르니따스/알빠스또르)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 427,
+            "mainIngredient": null,
+            "nextQuestionId": "taco_q3_authentic_beef",
+            "text": "건고추 향신료와 함께 푹 삶아내어 육즙이 풍부한 소고기 (바르바코아/비리아)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 428,
+            "mainIngredient": "CHICKEN",
+            "nextQuestionId": null,
+            "text": "살사와 이색 소스(몰레)를 곁들인 부드러운 닭고기 (치킨)"
+          }
+        ],
+        "questionText": "정통 옥수수 타코에 들어갈 메인 고기의 익힘 스타일은?"
+      },
+      {
+        "id": "taco_q3_authentic_pork",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 429,
+            "mainIngredient": "PORK",
+            "nextQuestionId": null,
+            "text": "돼지 부속(위, 혀, 껍데기 등)을 포함하여 현지 풍미를 극대화한 내장 부위"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 430,
+            "mainIngredient": "PORK",
+            "nextQuestionId": null,
+            "text": "크리스피 오겹살이나 수직 회전 화로(Trompo)로 구워 대중적인 살코기 부위"
+          }
+        ],
+        "questionText": "선호하시는 돼지고기 타코의 세부 부위와 질감은?"
+      },
+      {
+        "id": "taco_q3_authentic_beef",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 431,
+            "mainIngredient": "BEEF",
+            "nextQuestionId": null,
+            "text": "고추 육수에 고아낸 소고기를 치즈와 굽고 진한 콘소메 스프에 찍어 먹는 비리아"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 432,
+            "mainIngredient": "BEEF",
+            "nextQuestionId": null,
+            "text": "전통 공법의 수제 맷돌 또르띠아와 특수 부위(소혀 등)를 다루는 다이닝 스타일"
+          }
+        ],
+        "questionText": "소고기 타코 중 원하시는 조리 방식과 다이닝 성향은?"
+      },
+      {
+        "id": "taco_q2_texmex",
+        "options": [
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 433,
+            "mainIngredient": "SEAFOOD",
+            "nextQuestionId": null,
+            "text": "바삭한 흰살 생선 또는 새우 튀김에 상큼한 양배추 슬로우 (바하 스타일)"
+          },
+          {
+            "detailStyle": null,
+            "foodCategory": null,
+            "id": 434,
+            "mainIngredient": "BEEF",
+            "nextQuestionId": null,
+            "text": "그릴에 구운 소고기 스테이크(아사다)와 멜팅 치즈, 사워크림 (비프/퀘사디아)"
+          }
+        ],
+        "questionText": "밀가루 또르띠아 타코에 올릴 선호 고명은 무엇인가요?"
+      }
+    ],
+    "title": "멕시칸 타코 추천"
+  }
+]

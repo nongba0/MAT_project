@@ -1,0 +1,317 @@
+import csv
+import os
+
+bakeries = [
+    {
+        "name": "투떰즈업",
+        "exact_address": "서울특별시 마포구 망원로11길 29 2층",
+        "store_features": "망원동 맘모스빵, 쌀베이글 1대장. 속재료가 터질듯 들어간 비주얼",
+        "signature_menu": "밤모스, 피스타치오 맘모스롤",
+        "menu_features": "쌀로 만든 쫀득한 빵피에 달지 않고 원물 맛이 강한 크림",
+        "sold_out_info": "오픈 후 2~3시간 내 인기 메뉴 전량 품절",
+        "waiting_system": "캐치테이블 원격 줄서기 (금/토만 영업, 웨이팅 난이도 최상)",
+        "has_dine_in": "false",
+        "positive_reviews": "피스타치오 원물 맛이 엄청 진해요|빵피가 진짜 쫀득해요|크림이 안 느끼하고 재료 본연의 맛이 남",
+        "negative_review": "영업일이 주 2일뿐이고 오픈런 아니면 사기 힘들어서 피곤해요",
+        "review_links": "https://www.youtube.com/results?search_query=망원동+투떰즈업+오픈런",
+        "comparisons": "어글리베이커리|단맛|어글리베이커리보다 크림이 덜 달고 가벼운 느낌"
+    },
+    {
+        "name": "베통 성수",
+        "exact_address": "서울특별시 성동구 연무장7가길 8 1층",
+        "store_features": "유럽 감성 인테리어의 성수동 소금빵 핫플",
+        "signature_menu": "바질 소금빵, 버터 소금빵",
+        "menu_features": "모양이 O자형이라 모든 면이 바삭하고 버터 풍미가 훌륭함",
+        "sold_out_info": "오후 3~4시경 전 제품 매진",
+        "waiting_system": "현장 테이블링 대기 (주말 1~2시간 이상 대기)",
+        "has_dine_in": "true",
+        "positive_reviews": "모양이 특이해서 바삭한 부분이 많아 좋아요|인테리어가 예뻐서 사진 찍기 좋음|바질 향이 진짜 진해요",
+        "negative_review": "테이크아웃인데도 웨이팅 줄이 너무 길어서 지쳐요",
+        "review_links": "https://search.naver.com/search.naver?query=성수+베통+웨이팅",
+        "comparisons": "자연도소금빵|식감/기름짐|자연도에 비해 덜 기름지고 바삭한 식감이 강함"
+    },
+    {
+        "name": "코끼리베이글",
+        "exact_address": "서울특별시 영등포구 선유로 176 1층",
+        "store_features": "참나무 장작 화덕에서 구워내는 정통 화덕 베이글",
+        "signature_menu": "버터솔트 베이글, 크림치즈 생크림 베이글",
+        "menu_features": "화덕에서 구워내어 겉은 질깃바삭하고 속은 떡처럼 쫄깃한 식감",
+        "sold_out_info": "오전 10~11시경 샌드위치류 외 대부분 품절",
+        "waiting_system": "오전 8시 반 오픈 전부터 현장 줄서기 (웨이팅 극상)",
+        "has_dine_in": "true",
+        "positive_reviews": "화덕 불향이 살짝 나면서 미친듯한 쫄깃함|라떼가 베이글만큼이나 맛있음|크림치즈생크림이 달지 않아 좋음",
+        "negative_review": "아침 일찍 가지 않으면 기본 베이글은 구경도 못 함",
+        "review_links": "https://www.youtube.com/results?search_query=코끼리베이글+오픈런",
+        "comparisons": "런던베이글뮤지엄|식감|런베뮤보다 밀도가 촘촘하고 정통 하드 계열에 가까운 질깃함"
+    },
+    {
+        "name": "꼼다비뛰드",
+        "exact_address": "서울특별시 강남구 강남대로110길 62 1층",
+        "store_features": "파인다이닝 셰프들도 인정하는 강남 최고의 구움과자 및 바게트 샌드위치 전문점",
+        "signature_menu": "브리치즈 사과 샌드위치, 각종 마들렌",
+        "menu_features": "입천장이 까질듯한 바삭한 바게트와 고급스러운 샌드위치 속재료의 밸런스",
+        "sold_out_info": "오픈 후 2시간 내로 샌드위치 전량 매진",
+        "waiting_system": "테이블링 원격 줄서기 (수강신청급 난이도)",
+        "has_dine_in": "false",
+        "positive_reviews": "바게트의 바삭함과 사과의 상큼함 조화가 완벽|마들렌 배꼽이 크고 버터 풍미가 예술임|인생 샌드위치",
+        "negative_review": "영업일이 적고 줄서기 실패하면 아예 못 먹는 구조가 아쉬움",
+        "review_links": "https://www.youtube.com/results?search_query=꼼다비뛰드+빵지순례",
+        "comparisons": "메종엠오|마들렌|메종엠오에 비해 조금 더 버터리하고 캐주얼하게 풍성한 느낌"
+    },
+    {
+        "name": "자연도소금빵 성수",
+        "exact_address": "서울특별시 성동구 연무장길 56 1층",
+        "store_features": "오직 소금빵 단일 메뉴만 판매. 4개 한 세트 포장 전문",
+        "signature_menu": "자연도 소금빵 세트",
+        "menu_features": "프랑스산 버터가 듬뿍 들어가 밑바닥이 튀겨지듯 바삭하고 극강의 고소함",
+        "sold_out_info": "하루 4번 빵 나오는 시간마다 한정 수량 판매 후 품절",
+        "waiting_system": "키오스크 결제 후 번호표 대기 (줄이 길지만 회전율 빠름)",
+        "has_dine_in": "false",
+        "positive_reviews": "패키지가 너무 예뻐서 선물하기 좋음|버터동굴이 크고 밑바닥이 미친듯이 바삭함|단일메뉴라 전문성이 느껴짐",
+        "negative_review": "버터가 너무 많이 들어가서 2개 이상 먹으면 느끼함",
+        "review_links": "https://www.instagram.com/explore/tags/자연도소금빵/",
+        "comparisons": "베통|기름짐|베통보다 기름기가 많고 풍미가 자극적이며 헤비한 편"
+    },
+    {
+        "name": "과자방",
+        "exact_address": "서울특별시 마포구 백범로 152 1층",
+        "store_features": "전문 제빵 유튜버들이 극찬하는 구움과자(마들렌, 휘낭시에) 전문점",
+        "signature_menu": "플레인 마들렌, 소금초코 휘낭시에",
+        "menu_features": "겉은 빠작하고 속은 촉촉한 휘낭시에의 정석. 풍미 짙은 발효버터 사용",
+        "sold_out_info": "오후 늦게 방문 시 인기 구움과자 품절",
+        "waiting_system": "현장 방문 (주말 오후 웨이팅 발생)",
+        "has_dine_in": "true",
+        "positive_reviews": "선물 세트로 구매하기 최고|마들렌 식감이 퍽퍽하지 않고 촉촉함|휘낭시에 얼먹하면 쫀득함이 배가 됨",
+        "negative_review": "구움과자 크기 대비 가격이 조금 비싼 편",
+        "review_links": "https://www.youtube.com/results?search_query=마포+과자방",
+        "comparisons": "메종엠오|구움과자|메종엠오와 견줄 만한 퀄리티이나 조금 더 친숙하고 다양한 맛"
+    },
+    {
+        "name": "퍼먼트",
+        "exact_address": "서울특별시 성동구 서울숲2길 37 1층",
+        "store_features": "서울숲 나들이 필수 코스. 천연 발효종을 사용한 하드빵과 페이스트리 전문",
+        "signature_menu": "무화과 크림치즈 바게트, 퀸아망",
+        "menu_features": "질기지 않은 바삭한 바게트 안에 달콤한 무화과와 크림치즈가 듬뿍",
+        "sold_out_info": "주말 오후 4시 이후 주요 빵 품절",
+        "waiting_system": "현장 대기 (내부 취식석 경쟁 치열)",
+        "has_dine_in": "true",
+        "positive_reviews": "바게트가 입천장 안 까지고 고소함|서울숲 바로 앞이라 픽업해서 피크닉 가기 좋음|퀸아망 결이 살아있음",
+        "negative_review": "주말엔 사람이 너무 많고 시끄러워서 매장 내 취식이 불편함",
+        "review_links": "https://search.naver.com/search.naver?query=성수+퍼먼트+오픈런",
+        "comparisons": "꼼다비뛰드|바게트|꼼다비뛰드보다 덜 딱딱하고 대중적으로 씹기 편한 바게트 식감"
+    },
+    {
+        "name": "문스오븐",
+        "exact_address": "경기도 안산시 단원구 광덕대로 168 1층",
+        "store_features": "안산 지역 웨이팅 대장 빵집. 뛰어난 가성비의 식사빵",
+        "signature_menu": "올리브 치아바타, 크루아상",
+        "menu_features": "기공이 크게 열려있어 퐁신퐁신한 치아바타와 담백한 맛",
+        "sold_out_info": "오픈 후 2~3시간 내 완전 매진",
+        "waiting_system": "오픈 전부터 현장 오픈런 줄서기 필수",
+        "has_dine_in": "false",
+        "positive_reviews": "이 가격에 이 퀄리티의 치아바타라니 갓성비|올리브가 쏟아질 듯이 들어있음|크루아상 버터 향이 좋음",
+        "negative_review": "평일에도 오픈런 안하면 구경조차 못해서 사기가 너무 힘듦",
+        "review_links": "https://www.youtube.com/results?search_query=안산+문스오븐+오픈런",
+        "comparisons": "수더분|식사빵|수더분에 비해 산미가 적고 훨씬 대중적이고 부드러운 맛"
+    },
+    {
+        "name": "초량온당",
+        "exact_address": "부산광역시 동구 홍곡로 58 1층",
+        "store_features": "부산 빵지순례 원탑. 거대한 크럼블과 맘모스로 전국 빵순이 집결지",
+        "signature_menu": "황치즈 크럼블, 맘모스빵",
+        "menu_features": "손목이 아플 정도로 묵직한 무게. 달고 짠 자극적인 맛의 끝판왕",
+        "sold_out_info": "오후 2시 이전 주요 메뉴 완판",
+        "waiting_system": "테이블링 원격 대기 (대기번호 100번대 빈번)",
+        "has_dine_in": "false",
+        "positive_reviews": "크기랑 무게 생각하면 오히려 가성비가 좋음|황치즈 맛이 엄청 진해서 당충전 제대로 됨|부재료가 미친듯이 많음",
+        "negative_review": "너무 달고 자극적이라 한 번에 많이 먹기 힘듦",
+        "review_links": "https://search.naver.com/search.naver?query=초량온당+테이블링",
+        "comparisons": "투떰즈업|맘모스/크럼블|투떰즈업보다 훨씬 달고 자극적이며 헤비한 디저트 스타일"
+    },
+    {
+        "name": "서희와제과",
+        "exact_address": "부산광역시 부산진구 전포대로224번길 26 1층",
+        "store_features": "터질듯한 팥앙금과 얇은 빵피로 유명한 전포동 빵집",
+        "signature_menu": "밤팥빵, 쑥크림치즈빵",
+        "menu_features": "빵피는 얇고 쫀득하며, 팥이 너무 달지 않고 원물 그대로의 맛이 살아있음",
+        "sold_out_info": "빵 나오는 즉시 줄 선 사람들이 싹쓸이하여 조기 품절",
+        "waiting_system": "현장 웨이팅",
+        "has_dine_in": "false",
+        "positive_reviews": "팥이 달지 않아서 할매입맛에 최고|빵피가 떡처럼 쫀득함|속재료를 이렇게 넣고 남는게 있나 싶음",
+        "negative_review": "빵보다는 앙금 덩어리를 먹는 느낌이라 호불호 갈림",
+        "review_links": "https://www.instagram.com/explore/tags/서희와제과/",
+        "comparisons": "이성당|단팥빵|이성당에 비해 팥 양이 압도적으로 많고 덜 달며 빵피가 얇음"
+    },
+    {
+        "name": "더베이베이커리",
+        "exact_address": "부산광역시 부산진구 서전로37번길 26 1층",
+        "store_features": "유튜브 빵튜버들이 입을 모아 칭찬하는 전포동 가성비 최고 빵집",
+        "signature_menu": "바질토마토 크림치즈, 밤식빵",
+        "menu_features": "아낌없이 들어간 크림치즈와 밤, 촉촉한 빵의 조화",
+        "sold_out_info": "오후 3~4시경 대부분 매진",
+        "waiting_system": "현장 대기 (주말엔 1시간 이상)",
+        "has_dine_in": "false",
+        "positive_reviews": "요즘 물가에 이런 퀄리티와 가격이 놀라움|밤식빵에 밤이 쏟아져 내림|크림치즈 라인업이 다 맛있음",
+        "negative_review": "가게가 좁아서 빵 고르기가 불편함",
+        "review_links": "https://www.youtube.com/results?search_query=더베이베이커리+오픈런",
+        "comparisons": "초량온당|크림치즈빵|초량온당보다 덜 자극적이고 빵 본연의 맛과 밸런스가 좋음"
+    },
+    {
+        "name": "안동 맘모스베이커리",
+        "exact_address": "경상북도 안동시 문화광장길 34",
+        "store_features": "미슐랭 가이드에 소개된 전국 3대 빵집 중 하나",
+        "signature_menu": "크림치즈빵, 유자파운드",
+        "menu_features": "말랑하고 쫀득한 하얀 빵 속에 진하고 새콤달콤한 크림치즈가 가득",
+        "sold_out_info": "크림치즈빵은 수시로 채워지나 주말 저녁엔 매진",
+        "waiting_system": "현장 대기 (회전율 매우 빠름)",
+        "has_dine_in": "true",
+        "positive_reviews": "크림치즈빵 갓 나왔을 때 먹으면 눈물남|유자파운드가 선물용으로 최고|빵피가 아기 궁둥이처럼 부드러움",
+        "negative_review": "크림치즈빵 외에 다른 빵들은 평범한 동네 빵집 수준임",
+        "review_links": "https://search.naver.com/search.naver?query=안동+맘모스베이커리+웨이팅",
+        "comparisons": "성심당|지역명물|성심당처럼 메뉴가 다양하진 않고 시그니처 원툴에 가까움"
+    },
+    {
+        "name": "정동문화사",
+        "exact_address": "대전광역시 동구 태전로 22 1층",
+        "store_features": "성심당의 도시 대전에서 에그타르트로 오픈런을 만드는 곳",
+        "signature_menu": "에그타르트, 까눌레",
+        "menu_features": "파지 결이 바삭하게 살아있고 푸딩처럼 탱글탱글한 필링",
+        "sold_out_info": "점심시간 지나면 대부분 품절",
+        "waiting_system": "오전 현장 오픈런 필수",
+        "has_dine_in": "true",
+        "positive_reviews": "인생 에그타르트|필링이 비리지 않고 바닐라 향이 고급스러움|까눌레 겉바속촉 제대로임",
+        "negative_review": "오후에 가면 남은 빵이 아예 없음",
+        "review_links": "https://www.youtube.com/results?search_query=대전+정동문화사",
+        "comparisons": "과자방|구움과자|과자방보다 에그타르트의 크리스피함과 필링의 임팩트가 더 강함"
+    },
+    {
+        "name": "어글리베이커리",
+        "exact_address": "서울특별시 마포구 월드컵로13길 73 1층",
+        "store_features": "정정훈 셰프의 망원동 전설. 맘모스와 대파빵의 원조격",
+        "signature_menu": "대파빵, 말차 맘모스",
+        "menu_features": "부재료를 폭탄처럼 때려넣는 헤비급 빵. 크림이 두껍고 진함",
+        "sold_out_info": "주말 오후 3시 주요 크림빵 품절",
+        "waiting_system": "현장 대기 (더위/추위에 취약)",
+        "has_dine_in": "false",
+        "positive_reviews": "재료를 아끼지 않은 티가 팍팍 남|말차 크림이 진짜 쌉싸름하고 진함|대파빵의 원조다운 맛",
+        "negative_review": "빵피가 얇고 크림이 너무 많아서 빵이라기보단 디저트에 가까움",
+        "review_links": "https://search.naver.com/search.naver?query=망원동+어글리베이커리",
+        "comparisons": "투떰즈업|맘모스/크림|투떰즈업보다 크림이 더 달고 묵직하며, 빵피가 얇음"
+    },
+    {
+        "name": "아베베베이커리",
+        "exact_address": "제주특별자치도 제주시 동문로6길 4",
+        "store_features": "제주도 특산물을 넣은 크림 도넛으로 대히트를 친 전국구 핫플",
+        "signature_menu": "우도 땅콩 크림 도넛, 오메기떡 쑥 크림빵",
+        "menu_features": "얇은 도넛 피 안에 떡과 제주 특산물 크림이 꽉 차 있어 묵직함",
+        "sold_out_info": "오후 늦게 일부 인기 메뉴 품절",
+        "waiting_system": "현장 대기 (웨이팅 줄이 시장 밖까지 이어짐)",
+        "has_dine_in": "false",
+        "positive_reviews": "안에 떡이 들어있어서 쫄깃하고 배부름|크림 양이 압도적|제주 여행 선물로 최고",
+        "negative_review": "시장에 있어서 대기 환경이 번잡하고, 크림이 물림",
+        "review_links": "https://www.instagram.com/explore/tags/아베베베이커리/",
+        "comparisons": "노티드도넛|도넛|노티드에 비해 훨씬 크기가 크고, 떡이 들어있어 쫀득하며 한국적인 맛"
+    },
+    {
+        "name": "런던베이글뮤지엄 도산점",
+        "exact_address": "서울특별시 강남구 언주로168길 33 1, 2층",
+        "store_features": "영국 감성의 베이글 전문점, 엄청난 대기열과 사진 찍기 좋은 인테리어",
+        "signature_menu": "쪽파 갈릭 크림치즈 베이글, 감자 치즈 베이글",
+        "menu_features": "정통 베이글보다는 한국식으로 쫄깃하고 부드럽게 재해석된 식감",
+        "sold_out_info": "오후 4시 이후 대부분의 베이글 품절",
+        "waiting_system": "캐치테이블 원격 줄서기 (웨이팅 난이도 최상)",
+        "has_dine_in": "true",
+        "positive_reviews": "베이글이 질기지 않고 떡처럼 쫄깃해서 맛있어요|매장 컨셉이 독보적입니다|크림치즈가 풍성해요",
+        "negative_review": "정통 베이글 매니아들에게는 너무 달고 빵 같은 식감일 수 있어요",
+        "review_links": "https://www.youtube.com/results?search_query=런던베이글뮤지엄+오픈런",
+        "comparisons": "코끼리베이글|대중성|코끼리베이글보다 대중적이고 달콤한 디저트 느낌이 강함"
+    },
+    {
+        "name": "메종엠오",
+        "exact_address": "서울특별시 서초구 방배로26길 22 1층",
+        "store_features": "국내 최고 수준의 프랑스 정통 구움과자 및 파티스리",
+        "signature_menu": "마들렌, 몽블랑",
+        "menu_features": "섬세하고 우아한 식감과 완벽한 밸런스를 자랑하는 하이엔드 디저트",
+        "sold_out_info": "오전 방문하지 않으면 인기 갸또와 마들렌 품절",
+        "waiting_system": "오픈 전 현장 줄서기",
+        "has_dine_in": "true",
+        "positive_reviews": "마들렌의 배꼽과 촉촉함이 완벽합니다|디저트 하나하나가 예술작품 같아요|은은한 향이 고급스러워요",
+        "negative_review": "가격대가 꽤 높은 편입니다",
+        "review_links": "https://search.naver.com/search.naver?query=방배동+메종엠오",
+        "comparisons": "과자방|섬세함|과자방보다 향신료와 재료의 레이어가 더 복합적이고 섬세함"
+    },
+    {
+        "name": "이성당",
+        "exact_address": "전북특별자치도 군산시 중앙로 177",
+        "store_features": "대한민국 현존 가장 오래된 빵집 (1945년 오픈)",
+        "signature_menu": "단팥빵, 야채빵",
+        "menu_features": "얇은 쌀가루 빵피 안에 팥앙금과 아삭한 채소가 가득 들어간 클래식",
+        "sold_out_info": "하루 종일 빵이 나오나, 주말 오후 늦게는 품절",
+        "waiting_system": "단팥빵/야채빵 전용 대기줄 운용 (현장 대기)",
+        "has_dine_in": "true",
+        "positive_reviews": "야채빵의 아삭거리는 식감이 중독성 있어요|세월이 지나도 변하지 않는 추억의 맛|쌀빵이라 소화가 잘 돼요",
+        "negative_review": "줄이 너무 길어서 빵 사는 데만 한참 걸립니다",
+        "review_links": "https://www.youtube.com/results?search_query=군산+이성당",
+        "comparisons": "성심당|역사/클래식|성심당(튀소)에 비해 훨씬 담백하고 기름기 없는 전통적인 맛"
+    },
+    {
+        "name": "성심당 본점",
+        "exact_address": "대전광역시 중구 대종로480번길 15",
+        "store_features": "대전의 상징이자 대한민국 최고의 매출을 자랑하는 지역 명물 빵집",
+        "signature_menu": "튀김소보로, 부추빵, 명란바게트",
+        "menu_features": "바삭하게 튀겨낸 소보로 안에 팥앙금이 가득, 압도적인 가성비",
+        "sold_out_info": "거의 하루 종일 쉴 새 없이 빵이 생산됨",
+        "waiting_system": "매장 밖부터 이어지는 현장 줄서기 (회전율 극상)",
+        "has_dine_in": "false",
+        "positive_reviews": "요즘 물가에 믿기지 않는 가성비|명란바게트가 짭짤하고 진짜 맛있음|빵 종류가 너무 많아서 천국 같아요",
+        "negative_review": "사람이 너무 많아서 빵 고르기가 전쟁통 같습니다",
+        "review_links": "https://www.youtube.com/results?search_query=대전+성심당+웨이팅",
+        "comparisons": "이성당|다양성|이성당보다 메뉴 라인업이 훨씬 다양하고 트렌디한 빵도 잘함"
+    },
+    {
+        "name": "수더분",
+        "exact_address": "서울특별시 마포구 백범로 152 101동 1층",
+        "store_features": "사워도우와 식사빵을 제대로 구워내는 마포의 숨은 강자",
+        "signature_menu": "호두크랜베리 사워도우, 무화과 사워도우",
+        "menu_features": "천연 발효종 특유의 시큼한 산미와 겉바속촉의 훌륭한 식감",
+        "sold_out_info": "오후 방문 시 주요 사워도우 품절",
+        "waiting_system": "현장 방문 구매",
+        "has_dine_in": "false",
+        "positive_reviews": "산미 있는 사워도우 좋아하는 사람에게 최고의 빵집|빵을 먹어도 속이 편안해요|재료가 듬뿍 들어있어요",
+        "negative_review": "신맛이 나는 빵(사워도우)에 익숙하지 않으면 호불호가 갈릴 수 있어요",
+        "review_links": "https://search.naver.com/search.naver?query=공덕+수더분+사워도우",
+        "comparisons": "퍼먼트|산미|퍼먼트에 비해 사워도우 특유의 산미(신맛)가 더 뚜렷함"
+    },
+    {
+        "name": "카페 노티드 청담",
+        "exact_address": "서울특별시 강남구 도산대로53길 15 1층",
+        "store_features": "대한민국 프리미엄 도넛 열풍을 일으킨 주역",
+        "signature_menu": "우유 생크림 도넛, 클래식 바닐라 도넛",
+        "menu_features": "입에서 사르르 녹는 폭신한 빵피와 전혀 느끼하지 않은 산뜻한 크림",
+        "sold_out_info": "주말 늦은 오후 인기 도넛 품절",
+        "waiting_system": "현장 방문 및 카카오톡 예약 픽업",
+        "has_dine_in": "true",
+        "positive_reviews": "우유 크림이 하나도 안 달고 너무 부드러워요|패키지가 귀여워서 선물하기 좋습니다|빵피가 구름 같아요",
+        "negative_review": "예전만큼 줄 서서 먹을 특별한 맛은 아닌 것 같아요",
+        "review_links": "https://www.youtube.com/results?search_query=노티드도넛",
+        "comparisons": "아베베베이커리|도넛|아베베에 비해 크림이 가볍고 서양식 오리지널 도넛 식감에 가까움"
+    }
+]
+
+file_path = r"C:\Users\sangw\.gemini\antigravity\scratch\web-service\src\main\resources\bakeries.tsv"
+
+with open(file_path, 'w', encoding='utf-8', newline='') as f:
+    writer = csv.writer(f, delimiter='\t')
+    writer.writerow([
+        "name", "exact_address", "store_features", "signature_menu", "menu_features", 
+        "sold_out_info", "waiting_system", "has_dine_in", "positive_reviews", 
+        "negative_review", "review_links", "comparisons"
+    ])
+    for b in bakeries:
+        writer.writerow([
+            b["name"], b["exact_address"], b["store_features"], b["signature_menu"], 
+            b["menu_features"], b["sold_out_info"], b["waiting_system"], b["has_dine_in"], 
+            b["positive_reviews"], b["negative_review"], b["review_links"], b.get("comparisons", "")
+        ])
+
+print(f"Successfully generated {len(bakeries)} bakeries in TSV.")
