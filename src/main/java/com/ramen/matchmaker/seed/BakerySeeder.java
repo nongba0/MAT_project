@@ -57,6 +57,13 @@ public class BakerySeeder implements CommandLineRunner {
                 if (!linksStr.isEmpty()) {
                     bakery.setReviewLinks(Arrays.asList(linksStr.split("\\|")));
                 }
+                
+                if (data.length > 12 && !data[12].isEmpty()) {
+                    bakery.setLatitude(Double.parseDouble(data[12]));
+                }
+                if (data.length > 13 && !data[13].isEmpty()) {
+                    bakery.setLongitude(Double.parseDouble(data[13]));
+                }
 
                 BakeryOperation op = new BakeryOperation();
                 op.setBakery(bakery);

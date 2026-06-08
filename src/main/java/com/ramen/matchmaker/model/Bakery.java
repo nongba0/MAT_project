@@ -34,6 +34,9 @@ public class Bakery {
     @Column(name = "link", length = 500)
     private List<String> reviewLinks = new ArrayList<>();
 
+    private Double latitude;
+    private Double longitude;
+
     @OneToOne(mappedBy = "bakery", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private BakeryOperation operation;
 
@@ -68,6 +71,12 @@ public class Bakery {
     public List<String> getReviewLinks() { return reviewLinks; }
     public void setReviewLinks(List<String> reviewLinks) { this.reviewLinks = reviewLinks; }
     
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
+
     public BakeryOperation getOperation() { return operation; }
     public void setOperation(BakeryOperation operation) { this.operation = operation; }
     

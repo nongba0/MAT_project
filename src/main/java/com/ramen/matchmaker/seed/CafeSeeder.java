@@ -50,6 +50,13 @@ public class CafeSeeder implements CommandLineRunner {
                 if (!data[7].isEmpty()) {
                     cafe.setReviewLinks(Arrays.asList(data[7].split("\\|")));
                 }
+                
+                if (data.length > 15 && !data[15].isEmpty()) {
+                    cafe.setLatitude(Double.parseDouble(data[15]));
+                }
+                if (data.length > 16 && !data[16].isEmpty()) {
+                    cafe.setLongitude(Double.parseDouble(data[16]));
+                }
 
                 CafeOperation operation = new CafeOperation();
                 operation.setWaitingSystem(data[8]);
